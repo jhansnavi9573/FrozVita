@@ -90,9 +90,10 @@
     }
 
     .hero h1 {
-      font-size: 50px;
-      color: #003f5c;
-    }
+  font-size: 50px;
+  color: #003f5c;
+  margin-bottom: 5px;   /* reduce space below */
+}
 
     .hero p {
       font-size: 22px;
@@ -138,22 +139,49 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .nav-left {
-        display: none;
-      }
 
-      .logo {
-        width: 130px;
-      }
+  /* NAVBAR FIX */
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
 
-      .hero h1 {
-        font-size: 32px;
-      }
+  .nav-left {
+    display: none; /* hide menu on mobile */
+  }
 
-      .order-btn {
-        width: 80%;
-      }
-    }
+  .nav-center {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* LOGO FIX */
+  .logo {
+    width: 120px;
+  }
+
+  /* HERO TEXT FIX */
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  /* BUTTON FIX */
+  .order-btn {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    white-space: nowrap; /* prevents breaking */
+  }
   </style>
 </head>
 
