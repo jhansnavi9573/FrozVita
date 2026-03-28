@@ -1,247 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrozVita</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrozVita</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #d9f3ff, #c8f0f7);
-    }
-
-    /* NAVBAR */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: rgba(255,255,255,0.3);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-left a {
-      margin-right: 25px;
-      text-decoration: none;
-      color: #003f5c;
-      font-weight: 500;
-    }
-
-    /* CENTER LOGO */
-    .nav-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .logo {
-      width: 180px;
-      height: auto;
-    }
-
-    /* BUTTONS RIGHT */
-    .nav-right button {
-      margin-left: 10px;
-    }
-
-    /* BUTTON STYLES */
-    .btn {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .login-btn {
-      background: transparent;
-      border: 1px solid #003f5c;
-      color: #003f5c;
-    }
-
-    .login-btn:hover {
-      background: #003f5c;
-      color: white;
-    }
-
-    .signup-btn {
-      background: #00bcd4;
-      color: white;
-    }
-
-    .signup-btn:hover {
-      background: #0097a7;
-    }
-
-    /* HERO */
-    .hero {
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero h1 {
-  font-size: 50px;
-  color: #003f5c;
-  margin-bottom: 5px;   /* reduce space below */
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(to right, #d9f3ff, #c8f0f7);
 }
 
-    .hero p {
-      font-size: 22px;
-      color: #333;
-    }
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
 
-    .order-btn {
-      margin-top: 25px;
-      padding: 14px 30px;
-      background: #00bcd4;
-      color: white;
-      border-radius: 10px;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-    }
+.nav-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
-    .order-btn:hover {
-      background: #0097a7;
-    }
+.nav-left a {
+  text-decoration: none;
+  color: #003f5c;
+  font-weight: 500;
+}
 
-    /* PRODUCTS */
-    .products {
-      padding: 60px 40px;
-      text-align: center;
-    }
+/* CONTACT */
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  color: #003f5c;
+}
 
-    .product-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
+#contact-details {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #eef7f2;
+  padding: 18px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      width: 220px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
+.contact-item a {
+  text-decoration: none;
+  color: #003f5c;
+}
 
-  /* NAVBAR FIX */
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
+.contact-item a:hover {
+  text-decoration: underline;
+}
 
-  .nav-left {
-    display: none; /* hide menu on mobile */
-  }
+/* LOGO */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-  .nav-center {
-    position: static;
-    transform: none;
-    margin: 10px 0;
-  }
+.logo {
+  width: 180px;
+}
 
-  .nav-right {
-    display: flex;
-    gap: 10px;
-  }
+/* BUTTONS */
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
 
-  /* LOGO FIX */
-  .logo {
-    width: 120px;
-  }
+.login-btn {
+  border: 1px solid #003f5c;
+  background: transparent;
+}
 
-  /* HERO TEXT FIX */
-  .hero h1 {
-    font-size: 30px;
-  }
+.signup-btn {
+  background: #00bcd4;
+  color: white;
+}
 
-  .hero p {
-    font-size: 18px;
-  }
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  /* BUTTON FIX */
-  .order-btn {
-    width: 70%;
-    padding: 12px;
-    font-size: 16px;
-    white-space: nowrap; /* prevents breaking */
-  }
-  </style>
+.hero h1 {
+  margin-bottom: 5px;
+}
+
+.hero p {
+  margin-top: 5px;
+}
+
+/* ORDER BUTTON */
+.order-btn {
+  margin-top: 20px;
+  padding: 10px 35px;
+  min-width: 160px;
+  background: #00bcd4;
+  color: black;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+.navbar {
+  flex-direction: column;
+}
+
+.logo {
+  width: 120px;
+}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
+<div class="navbar">
 
-    <div class="nav-left">
-      <a href="#">Home</a>
-      <a href="#">Trending</a>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
-    </div>
+<div class="nav-left">
+  <a href="#">Home</a>
+  <a href="#">Trending</a>
 
-    <div class="nav-center">
-      <img src="logo.png" class="logo">
-    </div>
+  <div class="contact-box" onclick="toggleContact()">
+    Contact <span id="arrow">⌄</span>
 
-    <div class="nav-right">
-      <button class="btn login-btn">Login</button>
-      <button class="btn signup-btn">Sign Up</button>
-    </div>
+    <div id="contact-details">
 
-  </div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>FrozVita 🧊</h1>
-    <p>Engineered to Refresh!</p>
-
-    <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">
-      <button class="order-btn">Order Now</button>
-    </a>
-  </div>
-
-  <!-- PRODUCTS -->
-  <div class="products">
-    <h2>Our Products</h2>
-
-    <div class="product-container">
-
-      <div class="card">
-        <h3>Flavored Ice Cubes</h3>
-        <p>Fresh & tasty cubes</p>
+      <div class="contact-item">
+        📞 <a href="tel:+919573970422">+91 9573970422</a>
       </div>
 
-      <div class="card">
-        <h3>Liquid Packs</h3>
-        <p>Freeze & enjoy</p>
+      <div class="contact-item">
+        💬 <a href="sms:+919573970422">SMS</a>
       </div>
 
-      <div class="card">
-        <h3>Custom Orders</h3>
-        <p>As per your need</p>
+      <div class="contact-item">
+        📧 <a href="mailto:frozvita@gmail.com">frozvita@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        🟢 <a href="https://wa.me/919573970422">WhatsApp</a>
+      </div>
+
+      <div class="contact-item">
+        📷 <a href="https://instagram.com/frozvita">frozvita</a>
+      </div>
+
+      <div class="contact-item">
+        ☎️ <a href="tel:1800123456">1800-123-456</a>
       </div>
 
     </div>
   </div>
+</div>
+
+<div class="nav-center">
+  <img src="logo.png" class="logo">
+</div>
+
+<div class="nav-right">
+  <button class="btn login-btn">Login</button>
+  <button class="btn signup-btn">Sign Up</button>
+</div>
+
+</div>
+
+<div class="hero">
+  <h1>FrozVita 🧊</h1>
+  <p>Engineered to Refresh!</p>
+
+  <a href="https://wa.me/919573970422">
+    <button class="order-btn">Order Now</button>
+  </a>
+</div>
+
+<script>
+function toggleContact() {
+  var x = document.getElementById("contact-details");
+  var arrow = document.getElementById("arrow");
+
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+    arrow.innerHTML = "^";
+  } else {
+    x.style.display = "none";
+    arrow.innerHTML = "⌄";
+  }
+}
+</script>
 
 </body>
 </html>
