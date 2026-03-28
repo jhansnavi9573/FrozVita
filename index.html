@@ -14,34 +14,36 @@
 
     /* Navbar */
     .navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      z-index: 10;
+      padding: 15px 40px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      z-index: 100;
     }
 
     .logo-text {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
-      color: #003f5c; /* Dark color */
+      color: #003f5c;
     }
 
     .nav-buttons button {
       margin-left: 10px;
       padding: 8px 16px;
-      border: none;
-      cursor: pointer;
       border-radius: 5px;
+      cursor: pointer;
+      border: none;
     }
 
     .login {
       background: transparent;
-      color: #222;
-      border: 1px solid #222;
+      border: 1px solid #003f5c;
+      color: #003f5c;
     }
 
     .signup {
@@ -51,13 +53,45 @@
 
     /* Hero Section */
     .hero {
-  height: 100vh;
-  background-color: #9AB57B;
-  background-image: url('logo.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .hero img {
+      width: 200px;
+      filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.2));
+    }
+
+    .hero h1 {
+      margin: 20px 0 10px;
+      font-size: 40px;
+      color: #003f5c;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+    }
 
   </style>
 </head>
@@ -76,8 +110,15 @@
     </div>
   </div>
 
-  <!-- Background Logo -->
-  <div class="hero"></div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="logo.png" alt="FrozVita Logo">
+
+    <h1>FrozVita 🧊</h1>
+    <p>Engineered to Refresh!</p>
+
+    <button class="btn">Order Now</button>
+  </div>
 
 </body>
 </html>
